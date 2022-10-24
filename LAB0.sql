@@ -79,7 +79,7 @@ ON emp.manager_id=mng.manager_id;
 --16
 SELECT department_name
 FROM departments 
-WHERE department_id NOT IN (SELECT DISTINCT department_id
+WHERE department_id NOT IN (SELECT DISTINCT NVL(department_id,0)
                               FROM employees);
                               
 --v2
